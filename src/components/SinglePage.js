@@ -1,21 +1,19 @@
 import React from "react";
 import { useParams } from "react-router-dom";
-import { store } from "../productsStore/Store";
+import { store } from "../redux-state/store/Store";
 import { useDispatch } from "react-redux";
 import { cartActions } from "../redux-state/CartState";
 import { useState } from "react";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 import BreadCrumb from "./BreadCrumb";
 import "../styles/SinglePage.css";
 import { AiFillStar } from "react-icons/ai";
 import SinglePageFAQ from "./SinglePageFAQ";
-
 import AutoPlayMethods from "./SingleAlsoLike";
 import JournalSection from "./JournalSection";
 import SearchBox from "./SearchBox";
 import Review1 from "./Review1";
-
-import better from "../assets/better.jpeg";
+// import better from "../assets/better.jpeg";
 import { FaShippingFast } from "react-icons/fa";
 import { FaLock } from "react-icons/fa";
 import { BsCurrencyDollar } from "react-icons/bs";
@@ -50,7 +48,7 @@ const SinglePage = () => {
 
   var image = primaryImage;
 
-  let tempImage = image;
+  // let tempImage = image;
 
   const [activeImg, SetActiveImg] = useState(primaryImage);
   const [imgChnage, SetImgChange] = useState(false);
@@ -80,11 +78,13 @@ const SinglePage = () => {
         {imgChnage === true ? (
           <img
             src={activeImg}
+            alt="activeImg"
             className=" w-48 cursor-pointer rounded-2xl object-cover singlePageMainPic"
           />
         ) : (
           <img
             src={image}
+            alt="elseImage"
             className=" w-48 cursor-pointer rounded-2xl object-cover singlePageMainPic"
           />
         )}
@@ -93,6 +93,7 @@ const SinglePage = () => {
       <div className="sideImageHold flex flex-col relative gap-12">
         <img
           src={hoverImg}
+          alt="hoverImg"
           className=" w-64 cursor-pointer  object-cover"
           onMouseEnter={imgSrcTarget}
           onMouseLeave={defaultImageSrc}
@@ -100,6 +101,7 @@ const SinglePage = () => {
         <img
           src="https://cdn.shopify.com/s/files/1/0081/7374/8305/products/NO_Lists_for_Site-SIG_21bc4fd3-c2b5-4e21-8244-1f0f61cce160_540x.png?v=1599504641"
           className="w-64 cursor-pointer rounded-lg object-cover"
+          alt="defaultImg"
           onMouseEnter={imgSrcTarget}
           onMouseLeave={defaultImageSrc}
         />
@@ -109,6 +111,7 @@ const SinglePage = () => {
         <img
           src="https://cdn.shopify.com/s/files/1/0081/7374/8305/products/anysiaalice_image_720x.jpg?v=1599504641"
           className=" w-80 si cursor-pointer object-cover"
+          alt="defaultImg"
           onMouseEnter={imgSrcTarget}
           onMouseLeave={defaultImageSrc}
         />
@@ -116,6 +119,7 @@ const SinglePage = () => {
           src="https://cdn.shopify.com/s/files/1/0081/7374/8305/products/anysiaalice_quote-1_720x.jpg?v=1599504641"
           className=" w-80 si cursor-pointer object-cover"
           id="mobileDontSHow"
+          alt="defaultImg"
           onMouseEnter={imgSrcTarget}
           onMouseLeave={defaultImageSrc}
         />
@@ -127,8 +131,7 @@ const SinglePage = () => {
       </div>
 
       <p className="relative singleLinetop text-gray-300">
-        {" "}
-        ___________________________________________________________________{" "}
+        ___________________________________________________________________
       </p>
 
       <div className=" relative gap-2 flex starHold">

@@ -1,7 +1,7 @@
 import React from "react";
 import "../styles/Body.css";
 import { useState } from "react";
-import { store } from "../productsStore/Store";
+import { store } from "../redux-state/store/Store";
 import HoverImage from "react-hover-image/build";
 import { Link } from "react-router-dom";
 
@@ -114,7 +114,7 @@ const Body = () => {
 
           <div className="bodyTypeHold flex">
             {store.map((item) => {
-              if (item.type == "navbar-BodyType") {
+              if (item.type === "navbar-BodyType") {
                 return (
                   <Link to={`/${item.id}`} key={item.id}>
                     <div key={item.id} className="bodyTypeIndivitual">
@@ -131,6 +131,7 @@ const Body = () => {
                   </Link>
                 );
               }
+              return null;
             })}
           </div>
         </div>
@@ -161,10 +162,12 @@ const Body = () => {
             <img
               src="https://cdn.shopify.com/s/files/1/0081/7374/8305/articles/Natural_Balance_Shampoo_02_540x.jpg?v=1550710011"
               className=" rounded-xl w-52"
+              alt="primaryImg"
             />
             <img
               src="https://cdn.shopify.com/s/files/1/0081/7374/8305/articles/ee7ea9c87918e493665a3a84bdf6c00a_large_1b25100f-7d60-451b-9d01-e74d104141d5_540x.jpg?v=1550710009"
               className=" rounded-xl w-52"
+              alt="primaryImg"
             />
           </div>
 
@@ -184,7 +187,7 @@ const Body = () => {
           <div className="flex flex-row">
             <div className="TravelStoreHold flex flex-row gap-16">
               {store.map((item) => {
-                if (item.type == "navbar-TravelType") {
+                if (item.type === "navbar-TravelType") {
                   return (
                     <Link to={`/${item.id}`} key={item.id}>
                       <div key={item.id} className="TravelIndivitual">
@@ -205,6 +208,7 @@ const Body = () => {
                     </Link>
                   );
                 }
+                return null;
               })}
             </div>
           </div>
@@ -227,10 +231,9 @@ const Body = () => {
 
             <p> Shop All New Arrivals </p>
           </div>
-
           <div className="newTypeHold relative flex felx-row gap-10">
             {store.map((item) => {
-              if (item.type == "navbar-NewType") {
+              if (item.type === "navbar-NewType") {
                 return (
                   <Link to={`/${item.id}`} key={item.id}>
                     <div className="newIndivitual">
@@ -251,6 +254,7 @@ const Body = () => {
                   </Link>
                 );
               }
+              return null;
             })}
           </div>
         </div>

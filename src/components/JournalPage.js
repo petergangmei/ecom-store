@@ -5,7 +5,7 @@ import better from "../assets/better.jpeg";
 import { FaShippingFast } from "react-icons/fa";
 import { FaLock } from "react-icons/fa";
 import { BsCurrencyDollar } from "react-icons/bs";
-import JournalPageFooter from "./JournalPageFooter";
+import JournalPageFooter from "../navigation/JournalPageFooter";
 
 const JournalPage = () => {
   return (
